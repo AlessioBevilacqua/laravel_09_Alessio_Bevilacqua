@@ -20,7 +20,10 @@
             <div class="col-4 mb-4">
                 <div class="card h-100">
                     <div class="card-body">
-                        <h5 class= "card-title">{{ $product->name }}</h5>
+                        @if($product->img)
+                        <img src="{{ Storage::url($product->img) }}" class="card-img-top mb-3" alt="{{ $product->name }}">
+                        @endif
+                        <h5 class="card-title">{{ $product->name }}</h5>
                         <p class="card-text">{{ $product->description }}</p>
                         <p class="card-text"><strong>Price: </strong>${{ number_format($product->price, 2) }}</p>
                     </div>
