@@ -5,16 +5,9 @@
                 <h1 class="display-1 my-5">Products</h1>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                @if(session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-                @endif
-            </div>
-        </div>
-
+        
+        <x-success />
+        
         <div class="row">
             @foreach($products as $product)
             <div class="col-4 mb-4">

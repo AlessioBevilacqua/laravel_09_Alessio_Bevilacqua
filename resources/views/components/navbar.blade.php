@@ -9,12 +9,29 @@
         <li class="nav-item">
           <a class="nav-link " aria-current="page" href="{{ route('welcome') }}">Home</a>
         </li>
+        @auth  
         <li class="nav-item">
           <a class="nav-link" href="{{ route('form') }}">Form</a>
         </li>
+        @endauth
         <li class="nav-item">
           <a class="nav-link" href="{{ route('products') }}">Products</a>
         </li>
+        @auth 
+        <li class="nav-item">
+          <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit" class="nav-link">Logout</button>
+          </form>
+        </li>
+        @else
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('register') }}">Registrati</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('login') }}">Accedi</a> 
+        </li>
+        @endauth
       </ul>
     </div>
   </div>

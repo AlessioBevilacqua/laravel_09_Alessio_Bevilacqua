@@ -5,7 +5,7 @@ use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PublicController::class, 'welcome'])->name('welcome');
-Route::get('/form', [PublicController::class, 'form'])->name('form');
+Route::get('/form', [PublicController::class, 'form'])->name('form')->middleware('auth');
 
 Route::get('/products', [ProductsController::class, 'productList'])->name('products');
 
